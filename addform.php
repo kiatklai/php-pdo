@@ -3,10 +3,23 @@ $title = "Register Form";
 require_once "layout/header.php";
 require_once "db/connect.php";
 $result=$controller->getDepartment();
+
+if(isset($_POST["submit"])){
+  $fname=$_POST["fname"];
+  $lname=$_POST["lname"];
+  $salary=$_POST["salary"];
+  $department_id=$_POST["department_id"];
+  $status=$controller->insert($fname,$lname,$salary,$department_id);
+  if($status){
+    require_once "layout/success.php";
+  }else{
+    require_once "layout/error.php";
+  }
+}
 ?>
 
     <h1 class="text-center"><?php echo "Register Form" ?></h1>
-    <form method="GET" action="showData.php">
+    <form method="POST" action="addForm.php">
       <div class="form-group">
         <label for=fname>Name</label>
         <input type="text" name="fname" class="form-control">
@@ -27,7 +40,7 @@ $result=$controller->getDepartment();
             <?php }?>
           </select>
       </div>
-      <input type="submit" value="Register" class="btn btn-primary my-3">
+      <input type="submit" name="submit" value="Register" class="btn btn-primary my-3">
     </form>
   </div>
 </body>

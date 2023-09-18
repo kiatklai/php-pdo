@@ -13,5 +13,6 @@ try{
 }catch(PDOException $e){
   echo $e->getMessage();
 }
-
+require_once "db/controller.php";
+$controller = new Controller($pdo);
 ?>

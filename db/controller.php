@@ -4,7 +4,17 @@ class Controller{
 
   function __construct($con){
     $this->db=$con;
-    echo "Call to controller";
+  }
+
+  function getDepartment(){
+    try{
+      $sql = "SELECT * FROM departments";
+      $result=$this->db->query($sql);
+      return $result;
+    }catch(PDOException $e){
+      echo $e->getMessage();
+      return false;
+    }
   }
 }
 

@@ -17,6 +17,17 @@ class Controller{
     }
   }
 
+  function getStaffs(){
+    try{
+      $sql = "SELECT * FROM staffs a INNER JOIN departments b ON a.department_id = b.department_id;";
+      $result=$this->db->query($sql);
+      return $result;
+    }catch(PDOException $e){
+      echo $e->getMessage();
+      return false;
+    }
+  }
+
   function insert($fname,$lname,$salary,$department_id){
     try{
       $sql = "INSERT INTO 

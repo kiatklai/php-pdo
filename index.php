@@ -15,6 +15,7 @@ $i=1;
           <th scope="col">Last name</th>
           <th scope="col">Salary</th>
           <th scope="col">Department</th>
+          <th scope="col">Edit/Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,9 @@ $i=1;
             <td><?php echo $row["lname"] ?></td>
             <td><?php echo number_format($row["salary"]) ?></td>
             <td><?php echo $row["department_name"] ?></td>
+            <td>
+              <a href="delete.php?id=<?php echo $row["stf_id"] ?>" class="btn btn-danger">Delete</a>
+            </td>
           </tr>
         <?php } ?>
       </tbody>

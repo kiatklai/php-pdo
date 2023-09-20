@@ -45,6 +45,19 @@ class Controller{
       return false;
     }
   }
+
+  function delete($id){
+    try{
+      $sql = "DELETE FROM staffs WHERE stf_id=:id";
+      $stmt=$this->db->prepare($sql);
+      $stmt->bindParam(":id",$id);
+      $stmt->execute();
+      return true;
+    }catch(PDOException $e){
+      echo $e->getMessage();
+      return false;
+    }
+  }
 }
 
 ?>

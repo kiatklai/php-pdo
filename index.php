@@ -27,7 +27,8 @@ $i=1;
             <td><?php echo number_format($row["salary"]) ?></td>
             <td><?php echo $row["department_name"] ?></td>
             <td>
-              <a href="delete.php?id=<?php echo $row["stf_id"] ?>" class="btn btn-danger">Delete</a>
+              <a onclick="return confirm('Do you want to delete?')"
+              href="delete.php?id=<?php echo $row["stf_id"] ?>" class="btn btn-danger">Delete</a>
             </td>
           </tr>
         <?php } ?>

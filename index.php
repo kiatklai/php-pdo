@@ -29,6 +29,7 @@ $i=1;
             <td>
               <a onclick="return confirm('Do you want to delete?')"
               href="delete.php?id=<?php echo $row["stf_id"] ?>" class="btn btn-danger">Delete</a>
+              <a href="editForm.php?id=<?php echo $row["stf_id"] ?>" class="btn btn-warning">Edit</a>
             </td>
           </tr>
         <?php } ?>

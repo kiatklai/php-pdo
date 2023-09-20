@@ -58,6 +58,22 @@ class Controller{
       return false;
     }
   }
+
+  function getStaffInfo($id){
+    try{
+      $sql= "SELECT * FROM staffs a INNER JOIN departments b
+      ON a.department_id = b.department_id
+      WHERE stf_id = :id";
+      $stmt=$this->db->prepare($sql);
+      $stmt->bindParam(":id",$id);
+      $stmt->execute();
+      $result=$stmt->fetch(PDO::FETCH_ASSOC);
+      return $result;
+    }catch(PDOException $e){
+      echo $e->getMessage();
+      return false;
+    }
+  }
 }
 
 ?>

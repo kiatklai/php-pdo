@@ -74,6 +74,24 @@ class Controller{
       return false;
     }
   }
+
+  function update($fname,$lname,$salary,$department_id,$stf_id){
+    try{
+      $sql= "UPDATE staffs SET fname=:fname ,lname=:lname, salary=:salary,
+      department_id=:department_id WHERE stf_id=:stf_id";
+      $stmt=$this->db->prepare($sql);
+      $stmt->bindParam(":fname",$fname);
+      $stmt->bindParam(":lname",$lname);
+      $stmt->bindParam(":salary",$salary);
+      $stmt->bindParam(":department_id",$department_id);
+      $stmt->bindParam(":stf_id",$stf_id);
+      $stmt->execute();
+      return true;
+    }catch(PDOException $e){
+      echo $e->getMessage();
+      return false;
+    }
+  }
 }
 
 ?>

@@ -13,7 +13,8 @@ if(!isset($_GET["id"])){
 
 ?>
 <h1 class="text-center"><?php echo "Edit Form" ?></h1>
-    <form method="POST" action="">
+    <form method="POST" action="updateStaff.php">
+      <input type="hidden" name="stf_id" value="<?php echo $stf["stf_id"] ?>"/>
       <div class="form-group">
         <label for=fname>Name</label>
         <input type="text" name="fname" class="form-control" value="<?php echo $stf["fname"] ?>">

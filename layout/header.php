@@ -26,18 +26,20 @@ require_once "layout/session.php";
         <li class="nav-item">
           <a class="nav-link" href="addform.php">Register</a>
         </li>
+        <?php if(!isset($_SESSION["userid"])) {?>
         <li class="nav-item">
           <a class="nav-link" href="loginForm.php">Sign in</a>
         </li>
-        <!-- <li class="nav-item dropdown">
+        <?php }else{ ?>
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hi,Admin
+            Hi, <?php echo $_SESSION["username"] ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Sign out</a></li>
           </ul>
-        </li> -->
-
+        </li>
+        <?php } ?>
       </ul>
 
     </div>

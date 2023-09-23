@@ -1,3 +1,7 @@
+<?php
+require_once "layout/session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,14 +26,17 @@
         <li class="nav-item">
           <a class="nav-link" href="addform.php">Register</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          <a class="nav-link" href="loginForm.php">Sign in</a>
+        </li>
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Hi,Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Sign out</a></li>
           </ul>
-        </li>
+        </li> -->
 
       </ul>
 

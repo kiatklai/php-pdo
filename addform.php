@@ -2,6 +2,7 @@
 $title = "Register Form";
 require_once "layout/header.php";
 require_once "db/connect.php";
+require_once "layout/check_admin.php";
 $result=$controller->getDepartment();
 
 if(isset($_POST["submit"])){

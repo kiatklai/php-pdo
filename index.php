@@ -2,6 +2,7 @@
 $title = "First Page";
 require_once "layout/header.php";
 require_once "db/connect.php";
+require_once "layout/check_admin.php";
 $result=$controller->getStaffs();
 $i=1;
 ?>

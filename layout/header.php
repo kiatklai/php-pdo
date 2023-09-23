@@ -36,7 +36,7 @@ require_once "layout/session.php";
             Hi, <?php echo $_SESSION["username"] ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
           </ul>
         </li>
         <?php } ?>
